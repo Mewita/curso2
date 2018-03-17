@@ -7,15 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 class turno extends Model
 {
     	protected $table = 'cat_turnos';
-    	protected $fillable = ['description'];
+    	protected $fillable = ['descripcion'];
     	
-    	public function empleados();
+    	public function turnos()
     	{ 
     		return $this->hasMany('App\turno','id_turno','id');
         }
 
-    	public function setDescriptionAtribute($value);
+    	public function setDescriptionAtribute($value)
     	{ 
-    		 $this->atributes['description'] = mb_strtouper($value,'utf-8');
+    		 $this->atributes['descripcion'] = mb_strtouper($value,'utf-8');
         }
 }
